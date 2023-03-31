@@ -1,0 +1,42 @@
+import React, { useState } from 'react'
+import Base from './Base'
+import { Button } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+
+function AddTeacher({teacher, setTeacher}) {
+   const [teachername , setTeachername]=useState('')
+    const [department, setDepartment]=useState('')
+    const [qualification, setQualification]=useState('')
+    
+ const history= useHistory()
+    const addTeacher=()=>{
+        const newTeacher={
+            teachername,
+            department,
+            qualification,
+        }
+        // console.log(newTeacher.nam)
+      setTeacher([...teacher , newTeacher])
+      history.push('/teacher/details')
+    }
+    return (
+        <Base tittle="Add Teacher Details">
+            <div className='adduser-style'>
+            <input placeholder="Teacher Name"
+            value={teachername}
+            onChange={(event)=>setTeachername(event.target.value)}
+            />
+            <input placeholder="Teacher Department"
+              value={department}
+              onChange={(event)=>setDepartment(event.target.value)}/>
+            <input placeholder="qualification"
+              value={qualification}
+              onChange={(event)=>setQualification(event.target.value)}/>
+            <Button onClick={addTeacher}>Add</Button>
+            </div>
+          
+        </Base>
+    )
+}
+
+export default AddTeacher
