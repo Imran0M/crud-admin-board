@@ -6,11 +6,13 @@ import Base from './Base'
 function AddUser({user,setUser}) {
 
   const history = useHistory()
+  const [id, setId]=useState('')
   const [name , setName]=useState('')
   const [dob , setDob]= useState('')
   const [age , setAge]=useState('')
   const adding=()=>{
     const newUser={
+      id,
       name,
       dob,
       age
@@ -21,6 +23,10 @@ history.push('/')
   return (
     <Base tittle="Add Student Details">
       <div className="adduser-style container">
+        <input
+        placeholder="id"
+        value={id}
+        onChange={(event)=>setId(event.target.value)}/>
       <input 
       placeholder="Name"
       value={name}

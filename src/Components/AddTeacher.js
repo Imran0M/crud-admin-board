@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 function AddTeacher({teacher, setTeacher}) {
+  const[id , setId]= useState('')
    const [teachername , setTeachername]=useState('')
     const [department, setDepartment]=useState('')
     const [qualification, setQualification]=useState('')
@@ -11,6 +12,7 @@ function AddTeacher({teacher, setTeacher}) {
  const history= useHistory()
     const addTeacher=()=>{
         const newTeacher={
+          id,
             teachername,
             department,
             qualification,
@@ -21,6 +23,11 @@ function AddTeacher({teacher, setTeacher}) {
     }
     return (
         <Base tittle="Add Teacher Details">
+          <input
+          placeholder="id"
+          value={id}
+          onChange={(event)=>setId(event.target.value)}
+          />
             <div className='adduser-style'>
             <input placeholder="Teacher Name"
             value={teachername}
