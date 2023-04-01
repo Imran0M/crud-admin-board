@@ -7,10 +7,21 @@
   gap: 0.5rem;
   background-color: #539165;
   padding: 10px;
+  justify-content: space-evenly;
 }
-.btn{
-  margin: 7px;
+.btnn{
+ padding: 10px;
+ background-color: inherit;
+ color: white;
+ font-weight: bold;
+ border: none;
+
 }
+/* .btnn:hover{
+  border: 1px solid black;
+  border-radius: 5px;
+  
+}  */
 .add-btn{
   border: none;
   border-radius: 5px;

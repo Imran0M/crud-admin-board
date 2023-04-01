@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import Base from './Base'
 import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import { AppCon } from './AppProvider'
 
-function AddTeacher({teacher, setTeacher}) {
+function AddTeacher() {
+
+  const {teacher , setTeacher}= AppCon()
   const[id , setId]= useState('')
    const [teachername , setTeachername]=useState('')
     const [department, setDepartment]=useState('')

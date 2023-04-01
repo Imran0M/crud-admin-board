@@ -1,9 +1,10 @@
 import Base from './Base'
 import Table from 'react-bootstrap/Table';
 import { useHistory } from 'react-router-dom';
+import { AppCon } from './AppProvider';
 
-function UserPage({user ,setUser}) {
-  
+function UserPage() {
+  const {user, setUser}=AppCon()
     const deleteUser=(idx)=>{
       const deletedUser = user.filter((student)=>student.id !== idx)
     setUser(deletedUser)

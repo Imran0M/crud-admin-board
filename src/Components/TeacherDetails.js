@@ -2,10 +2,12 @@ import React from 'react'
 import Base from './Base'
 import Table from 'react-bootstrap/Table';
 import { useHistory } from 'react-router-dom';
+import { AppCon } from './AppProvider';
 
 
 
-function TeacherDetails({teacher, setTeacher}) {
+function TeacherDetails() {
+  const {teacher , setTeacher}= AppCon()
   const history = useHistory()
     const deleteTeacher=(idx)=>{
         const deleted = teacher.filter((teach) =>teach.id !== idx)

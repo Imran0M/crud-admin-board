@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 import Base from './Base'
+import { AppCon } from './AppProvider'
 
-function AddUser({user,setUser}) {
-
+function AddUser() {
+   const {user , setUser}=AppCon()
   const history = useHistory()
   const [id, setId]=useState('')
   const [name , setName]=useState('')

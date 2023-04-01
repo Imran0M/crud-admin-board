@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { useHistory, useParams } from 'react-router-dom'
 import Base from './Base'
+import { AppCon } from './AppProvider'
 
-function EditUser({user, setUser}) {
+function EditUser() {
+  const {user, setUser}=AppCon()
     const history = useHistory()
     const [name , setName]=useState('')
     const [dob , setDob]= useState('')

@@ -4,8 +4,10 @@ import { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { useHistory, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
+import { AppCon } from './AppProvider'
 
-function EditTeacher({teacher ,setTeacher}) {
+function EditTeacher() {
+  const {teacher , setTeacher}= AppCon()
     const history= useHistory()
     const [teachername , setTeachername]=useState('')
     const [department, setDepartment]=useState('')
