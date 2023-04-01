@@ -1,25 +1,25 @@
 export const DataTwo=[
     {   
         id:"01",
-        teachername:"Mohamed Imran",
+        teachername:"AVR",
         department:"medical",
-        qualification:"mba"
+        qualification:"Mbbs"
     },
     {
         id:"02",
-        teachername:"Mohamed Imran",
+        teachername:"AKM",
         department:"Arts",
         qualification:"Bsc chemistry"
     },
     {
         id:"03",
-        teachername:"Mohamed Imran",
+        teachername:"GANI",
         department:"IT",
         qualification:"MCA"
     },
     {
         id:"04",
-        teachername:"Mohamed Imran",
+        teachername:"AWS",
         department:"IT",
         qualification:"BCA"
     },

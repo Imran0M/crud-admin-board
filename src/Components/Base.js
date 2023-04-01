@@ -12,10 +12,8 @@ function Base({tittle, children}) {
         <button  onClick={()=>history.push('/add/user')}className="btnn" >Add Student</button>
         <button  className="btnn"  onClick={()=>history.push('/teacher/details')}>Teacher details</button>
         <button className="btnn"   onClick={()=>history.push('/add/teacher')} >Add Teacher</button>
-       
-        
         </div>
-        <h2>{tittle}</h2>
+        <h2 style={{marginTop:"10px"}}>{tittle}</h2>
         <div>{children}</div>
     </div>
   )

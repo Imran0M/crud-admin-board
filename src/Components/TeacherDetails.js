@@ -13,16 +13,12 @@ function TeacherDetails() {
         const deleted = teacher.filter((teach) =>teach.id !== idx)
         // console.log(deleted)
         setTeacher(deleted)
-    }
-    
-    
+    } 
     return (
         <Base tittle="Teacher Details">
            <div className="container">
-            {teacher.map((teacher ,id)=>(
-                <div key={id}>
-                <Table striped bordered hover variant="dark">
-                       <thead>
+            <Table>
+            <thead>
                          <tr>
                            <th className="col-3">Name</th>
                            <th className="col-3" >Department </th>
@@ -30,15 +26,21 @@ function TeacherDetails() {
                            <th className="col-3">Operation</th>
                          </tr>
                        </thead>
+            </Table>
+           
+            {teacher.map((teacher ,id)=>(
+                <div key={id}>
+                <Table >
                        <tbody>
                          <tr>
-                           <td>{teacher.teachername}</td>
-                           <td>{teacher.department}</td>
-                           <td>{teacher.qualification}</td>
+                           <td className="col-3" >{teacher.teachername}</td>
+                           <td  className="col-3">{teacher.department}</td>
+                           <td className="col-3" >{teacher.qualification}</td>
                            <td>
                                <div>
-                               <button onClick={()=>deleteTeacher(teacher.id)} className="delete-btn"> Delete </button>{' '}
+                                <button className="add-btn" onClick={()=>history.push('/add/teacher') }>Add </button>{' '}
                                <button onClick={()=>history.push(`/ed/${teacher.id}`)} className="edit-btn" >Edit </button>{' '}
+                               <button onClick={()=>deleteTeacher(teacher.id)} className="delete-btn"> Delete </button>{' '}
                                </div>
                            </td>
                          </tr>

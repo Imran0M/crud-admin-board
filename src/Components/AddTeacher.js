@@ -26,12 +26,13 @@ function AddTeacher() {
     }
     return (
         <Base tittle="Add Teacher Details">
-          <input
+         
+            <div className='adduser-style'>
+            <input
           placeholder="id"
           value={id}
           onChange={(event)=>setId(event.target.value)}
           />
-            <div className='adduser-style'>
             <input placeholder="Teacher Name"
             value={teachername}
             onChange={(event)=>setTeachername(event.target.value)}

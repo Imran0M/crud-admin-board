@@ -10,16 +10,12 @@ function UserPage() {
     setUser(deletedUser)
     }
     const history = useHistory()
-   
   return (
    <Base
    tittle="USER DETAILS">
     <div className="container">
-
-   {user.map((student, id)=>(
-    <div key={id}>
- <Table striped bordered hover variant="dark">
-        <thead>
+      <Table>
+      <thead>
           <tr>
             <th className="col-3">Name</th>
             <th className="col-3" >DOB </th>
@@ -27,15 +23,22 @@ function UserPage() {
             <th className="col-3">Operation</th>
           </tr>
         </thead>
+      </Table>
+
+   {user.map((student, id)=>(
+    <div key={id}>
+ <Table >
+       
         <tbody>
           <tr>
-            <td>{student.name}</td>
-            <td>{student.dob}</td>
-            <td>{student.age}</td>
-            <td>
+            <td className="col-3" >{student.name}</td>
+            <td className="col-3">{student.dob}</td>
+            <td className="col-3">{student.age}</td>
+            <td className="col-3">
                 <div>
-                <button onClick={()=>deleteUser(student.id)} className="delete-btn"> Delete User</button>{' '}
-                <button onClick={()=>history.push(`edit/${student.id}`)} className="edit-btn" >Edit User</button>{' '}
+                <button className="add-btn" onClick={()=>history.push('/add/user') }>Add </button>{' '}
+                <button onClick={()=>history.push(`edit/${student.id}`)} className="edit-btn" >Edit </button>{' '}
+                <button onClick={()=>deleteUser(student.id)} className="delete-btn"> Delete </button>{' '}
                 </div>
             </td>
           </tr>
